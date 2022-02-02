@@ -14,22 +14,22 @@ AuthorId int foreign key references Authors(Id)
 )
 
 insert into Books
-values('Güne? Ülkesi',500,1),
+values('Günes Ülkesi',500,1),
 ('Projeler ile Excel ve Makrolar',210,2),
-('Analitik Psikoloji Üzerine ?ki Deneme',140,3),
-('Önce Sen Vard?n',300,4),
-('Sil Ba?tan',400,6),
-('Kaybolu?',240,6),
-('Zaman Çark?',450,6),
-('Harry Potter ve Felsefe Ta?? - 1.Kitap',600,5),
-('Harry Potter ve S?rlar Odas? - 2.kitap',460,5),
+('Analitik Psikoloji Üzerine iki Deneme',140,3),
+('Önce Sen Vardin',300,4),
+('Sil Bastan',400,6),
+('Kaybolus',240,6),
+('Zaman Çarki',450,6),
+('Harry Potter ve Felsefe Tasi - 1.Kitap',600,5),
+('Harry Potter ve Sirlar Odasi - 2.kitap',460,5),
 ('Güzel Bir Hayat',200,5)
 
 insert into Authors
 values('Tommaso','Campanella'),
 ('Süleyman ','Uzunköprü'),
 ('Carl Gustav','Jung'),
-('Do?an ','Kitap'),
+('Dogan ','Kitap'),
 ('J. K.','Rowling'),
 ('Ken','Grimwood ')
 
@@ -86,11 +86,17 @@ exec usp_updateAuthor @Id = 8, @Name = 'Cingiz',@Surname='Abdullayev'
 
 select * from Authors
 
-select FulName, Count(FulName) as 'Kitablarin sayi',MAX(PageCount)as MaxpageCount from
-(select a.Id, a.Name+a.Surname as FulName, b.Name as BookName,b.PageCount as PageCount  from Books as b
+create view vw_selectAllAuthorBooksCount
+as
+select FulName, Count(*) BooksCount,MAX(PageCount)as MaxpageCount from
+(select a.Id  , a.Name+a.Surname as FulName, b.Name as BookName,b.PageCount as PageCount  from Books as b
 join Authors a
 on b.AuthorId =a.Id
-where b.PageCount>=300
-
 ) as AuthorBooks
-Group by FulName
+group by FulName
+having Count(*)>=2
+
+select * from vw_selectAllAuthorBooksCount
+
+
+
