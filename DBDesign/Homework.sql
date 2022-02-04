@@ -86,7 +86,7 @@ exec usp_updateAuthor @Id = 8, @Name = 'Cingiz',@Surname='Abdullayev'
 
 select * from Authors
 
-create view vw_selectAllAuthorBooksCount
+create view vw_selectAllAuthorBooks
 as
 select FulName, Count(*) BooksCount,MAX(PageCount)as MaxpageCount from
 (select a.Id  , a.Name+a.Surname as FulName, b.Name as BookName,b.PageCount as PageCount  from Books as b
@@ -94,9 +94,9 @@ join Authors a
 on b.AuthorId =a.Id
 ) as AuthorBooks
 group by FulName
-having Count(*)>=2
 
-select * from vw_selectAllAuthorBooksCount
+
+select * from vw_selectAllAuthorBooks
 
 
 
