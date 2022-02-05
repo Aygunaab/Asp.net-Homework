@@ -1,0 +1,428 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+   <header>
+       <div class="row header-slider owl-carousel m-0" style="z-index: 0">
+           @foreach (Slider item in Model.Sliders)
+           {
+               <div class="img img1">
+                   <img src="~/images/@item.Image" alt="" />
+                   <div class="header-text col-5 col-lg-3">
+                       <p class="header-1"> @Html.Raw(item.Title)</p>
+                       <p class="header-2">
+                         @item.Desc
+                       </p>
+                       <img src="~/images/IndexHeaderWrite.png" alt="" />
+                   </div>
+               </div>
+           }
+
+       </div>
+    </header>
+<main>
+    <section id="flower" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row product-type align-items-center">
+                        <ul class="d-flex list-unstyled col-lg-6 justify-content-between">
+                            <li onclick="sortClick(this)" style="color:#f34f3f">ALL</li>
+                            <li onclick="sortClick(this, 'popular')">POPULAR</li>
+                            <li onclick="sortClick(this, 'winter')">WINTER</li>
+                            <li onclick="sortClick(this, 'various')">VARIOUS</li>
+                            <li onclick="sortClick(this, 'exotic')">EXOTIC</li>
+                            <li onclick="sortClick(this, 'greens')">GREENS</li>
+                            <li onclick="sortClick(this, 'cactuses')">CACTUSES</li>
+                        </ul>
+                        <div class="col-6 categories">
+                            <div class="d-flex align-items-center">
+                                <p>CATEGORIES</p>
+                                <i class="fas fa-sort-down mx-3 mb-2"></i>
+                            </div>
+                        </div>
+                        <div class="
+                    filter
+                    col-6
+                    d-flex
+                    justify-content-end
+                    align-items-center
+                  ">
+                            <p>FILTER</p>
+                            <i class="fas fa-sort-down mx-3 mb-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-2 categories-dropdown">
+                    <ul class="list-unstyled">
+                        <li onclick="sortClick(this)" style="color:#f34f3f">ALL</li>
+                        <li onclick="sortClick(this, 'popular')">POPULAR</li>
+                        <li onclick="sortClick(this, 'winter')">WINTER</li>
+                        <li onclick="sortClick(this, 'various')">VARIOUS</li>
+                        <li onclick="sortClick(this, 'exotic')">EXOTIC</li>
+                        <li onclick="sortClick(this, 'greens')">GREENS</li>
+                        <li onclick="sortClick(this, 'cactuses')">CACTUSES</li>
+                    </ul>
+                </div>
+
+                <div class="flowers col-lg-12 mt-4">
+                    <div class="flowers-item popular">
+                        <div class="img">
+                            <img src="~/images/MajestyPalm.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">MAJESTY PALM</p>
+                            <div class="flowers-title">
+                                <div class="addToCart" data-id="1" style="display: inline-block;">Add To Cart</div>
+                                <div class="price-container " style="display: inline-block;">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item popular">
+                        <div class="img">
+                            <img src="~/images/FoxGlove Flower.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">FOXGLOVE FLOWER</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="2">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item popular">
+                        <div class="img">
+                            <img src="~/images/Sweet Alyssum.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">SWEET ALYSSUM</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="3">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item winter">
+                        <div class="img">
+                            <img src="~/images/Spring Snowflake.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">SPRING SNOWFLAKE</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="4">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item winter">
+                        <div class="img">
+                            <img src="~/images/Scarlet Sage.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">SCARLET SAGE</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="5">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item various">
+                        <div class="img">
+                            <img src="~/images/Rock Soapwort.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">ROCK SOAPWORT</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="6">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item various">
+                        <div class="img">
+                            <img src="~/images/Summer Savory.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">SUMMER SAVORY</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="7">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item exotic">
+                        <div class="img">
+                            <img src="~/images/Wild Roses.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">WILD ROSES</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="8">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item exotic">
+                        <div class="img">
+                            <img src="~/images/WildCactus.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">WILD CACTUS</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="9">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item greens">
+                        <div class="img">
+                            <img src="~/images/cactusOrange.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">CACTUS IN ORANGE</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="10">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">259</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item greens">
+                        <div class="img">
+                            <img src="~/images/colorfulTulips.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">COLORFUL TULIPS</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="11">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">350</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-item cactuses">
+                        <div class="img">
+                            <img src="~/images/pinkFLower.jpeg" alt="" />
+                        </div>
+                        <div class="flower-body text-center">
+                            <p class="flower-name">PINK FLOWER TREE</p>
+                            <div class="flowers-title">
+                                <div class="addToCart animate__animated" data-id="12">Add To Cart</div>
+                                <div class="price-container animate__animated">
+                                    $
+                                    <span class="price">180</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="surprise" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 popUp">
+                    <img src="~/images/surpriceSectionImage.jpeg" alt="" />
+                    <i class="fas fa-play fa-2x"></i>
+                    <div class="circle"></div>
+                </div>
+                <div class="col-lg-6 col-12 surprise-content">
+                    <p class="header">Surprise Your <span>Valentine!</span></p>
+                    <p class="header">Let Us arrange a smile.</p>
+                    <p class="">
+                        Where flowers are our inspiration to create lasting memories.
+                    </p>
+                    <p style="padding-top: 0" class="">Whatever the occasion...</p>
+                    <div class="list-item-holder d-flex align-items-center pt-4">
+                        <img src="~/images/heart-icon.png" alt="" />
+                        <p class="mx-3">Hand picked just for you</p>
+                    </div>
+                    <div class="list-item-holder d-flex align-items-center pt-3">
+                        <img src="~/images/heart-icon.png" alt="" />
+                        <p class="mx-3">Unique flower arrangements</p>
+                    </div>
+                    <div class="list-item-holder d-flex align-items-center pt-3">
+                        <img src="~/images/heart-icon.png" alt="" />
+                        <p class="mx-3">Best way to say you care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="flower-experts" class="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h2 style="font-size: 38px; font-weight: 400">Flower Experts</h2>
+                </div>
+                <div class="col-lg-7 text-center mt-2">
+                    <p>
+                        A perfect blend of creativity, energy, communication, happiness
+                        and love. Let us arrange a smile for you.
+                    </p>
+                </div>
+                <div class="members mt-5">
+                    @foreach (Expert item in Model.Experts)
+                    {
+                        <div class="member">
+                            <img src="~/images/@item.Image" alt="" />
+                            <h6>@item.Fullname</h6>
+                            <span class="">@item.Position.Name</span>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center pb-5">
+                    <h3 style="color: #ffffff">Join The Colorful Bunch!</h3>
+                </div>
+                <div id="form-subscribe" class="col-lg-6 col-12">
+                    <input type="email"
+                           name="email"
+                           class=""
+                           placeholder="Email Address" />
+                    <input type="submit" class="" name="" id="" value="SUBSCRIBE" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h2>From Our Blog</h2>
+                </div>
+                <div class="col-lg-7 text-center mt-2 mb-5">
+                    <p>
+                        A perfect blend of creativity, energy, communication, happiness
+                        and love. Let us arrange a smile for you.
+                    </p>
+                </div>
+                <div class="blogs">
+                    <div class="blog-element">
+                        <div class="img">
+                            <img src="~/images/flowerPower.jpeg" alt="" />
+                        </div>
+                        <div class="blog-element__body text-center">
+                            <h5 class="mt-2">
+                                <a href="">Flower Power</a>
+                            </h5>
+                            <p itemprop="description" class="mkdf-post-excerpt">
+                                Class aptent taciti sociosqu ad litora torquent per conubia
+                                nostra, per
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog-element">
+                        <div class="img img2">
+                            <img src="~/images/localFlorists.jpeg" alt="" />
+                        </div>
+                        <div class="blog-element__body text-center">
+                            <h5 class="mt-2">
+                                <a href="">Local Florists</a>
+                            </h5>
+                            <p itemprop="description" class="mkdf-post-excerpt">
+                                Class aptent taciti sociosqu ad litora torquent per conubia
+                                nostra, per
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog-element">
+                        <div class="img img3">
+                            <img src="~/images/flowerBeauty.jpeg" alt="" />
+                        </div>
+                        <div class="blog-element__body text-center">
+                            <h5 class="mt-2">
+                                <a href="">FLower Beauty</a>
+                            </h5>
+                            <p itemprop="description" class="mkdf-post-excerpt">
+                                Class aptent taciti sociosqu ad litora torquent per conubia
+                                nostra, per
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="slider">
+        <div class="container">
+            <div class="
+              row
+              justify-content-center
+              main-slider
+              owl-carousel owl-theme
+            ">
+                <div class="col-lg-6 col-sm-8 col-10 slider-item text-center">
+                    <div class="img my-3">
+                        <img src="~/images/sliderImg1.png" alt="" />
+                    </div>
+                    <div class="slider-body text-center">
+                        <p class="my-3">
+                            Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                            Cras dapibus lingua.
+                        </p>
+                        <span>ANNA BARNES</span>
+                        <span style="color: #afafaf">Florist</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-10 slider-item text-center">
+                    <div class="img my-3">
+                        <img src="~/images/sliderImg2.png" alt="" />
+                    </div>
+                    <div class="slider-bod text-center">
+                        <p class="my-3">
+                            Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                            Cras dapibus lingua.
+                        </p>
+                        <span>ANNA BARNES</span>
+                        <span style="color: #afafaf">Florist</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
