@@ -17,5 +17,10 @@ namespace Classwork.DAL
         public DbSet<Slider>Sliders { get; set; }
         public DbSet<Expert> Experts { get; set; }
         public DbSet<Position> Positions{ get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Flower> Flowers { get; set; }
+        public DbSet<FlowerCategory> FlowerCategories { get; set; }
+        public DbSet<Campaign> Campaigns { get; set; }
+        public DbSet<FlowerImage> FlowerImages { get; set; }
     }
 }

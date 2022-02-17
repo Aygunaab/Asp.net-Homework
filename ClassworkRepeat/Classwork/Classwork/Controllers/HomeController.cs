@@ -25,7 +25,9 @@ namespace Classwork.Controllers
             HomeVM model = new HomeVM
             {
                 Sliders = _context.Sliders.OrderBy(s => s.Order).ToList(),
-                Experts = _context.Experts.Include(e => e.Position).Take(4).ToList()
+                Experts = _context.Experts.Include(e => e.Position).Take(4).ToList(),
+                Categories = _context.Categories.OrderByDescending(c => c.Id).Take(6).ToList(),
+               
             };
             return View(model);
         }

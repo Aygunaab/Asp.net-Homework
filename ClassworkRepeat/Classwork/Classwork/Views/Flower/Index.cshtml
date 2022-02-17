@@ -1,0 +1,25 @@
+﻿@model List<Flower>
+@{
+    ViewData["Title"] = "Index";
+}
+@section Css{
+
+    <link rel="stylesheet" href="~/assets/css/stle.css" />
+
+}
+@section Scripts{
+    <script src="~/assets/js/index.js" defer></script>
+}
+<main>
+    <section id="flower" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="flowers col-lg-12 mt-4">
+                 @await Component.InvokeAsync("Flower")
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
