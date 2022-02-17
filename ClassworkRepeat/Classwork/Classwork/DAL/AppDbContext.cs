@@ -22,5 +22,6 @@ namespace Classwork.DAL
         public DbSet<FlowerCategory> FlowerCategories { get; set; }
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<FlowerImage> FlowerImages { get; set; }
+        public DbSet<Layout> Layouts { get; set; }
     }
 }

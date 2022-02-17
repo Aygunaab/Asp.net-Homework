@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 
 namespace Classwork.ViewComponents
 {
-    public class FlowerViewComponent:ViewComponent
+    public class FooterViewComponent:ViewComponent
     {
         private readonly AppDbContext _context;
 
-        public FlowerViewComponent(AppDbContext context)
+        public FooterViewComponent(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+
+        public async  Task<IViewComponentResult> InvokeAsync()
         {
-            List<Flower> flowers =  await _context.Flowers.Include(f => f.FlowerCategories).ThenInclude(c => c.Category).ToListAsync();
-            return View(flowers);
+            Layout layout = await _context.Layouts.FirstOrDefaultAsync();
+            return View(layout);
         }
     }
 }

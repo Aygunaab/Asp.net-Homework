@@ -20,13 +20,13 @@ namespace Classwork.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async  Task<IActionResult> Index()
         {
             HomeVM model = new HomeVM
             {
-                Sliders = _context.Sliders.OrderBy(s => s.Order).ToList(),
-                Experts = _context.Experts.Include(e => e.Position).Take(4).ToList(),
-                Categories = _context.Categories.OrderByDescending(c => c.Id).Take(6).ToList(),
+                Sliders = await _context.Sliders.OrderBy(s => s.Order).ToListAsync(),
+                Experts = await _context.Experts.Include(e => e.Position).Take(4).ToListAsync(),
+                Categories = await _context.Categories.OrderByDescending(c => c.Id).Take(6).ToListAsync(),
                
             };
             return View(model);

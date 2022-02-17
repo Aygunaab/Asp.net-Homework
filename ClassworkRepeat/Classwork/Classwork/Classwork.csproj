@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20220217160415_CreateFlowerCategoryTable.cs" />
     <Compile Remove="Migrations\20220217160415_CreateFlowerCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20220217174318_CreatedLayouttable.cs" />
+    <Compile Remove="Migrations\20220217174318_CreatedLayouttable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
