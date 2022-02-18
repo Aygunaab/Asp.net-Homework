@@ -1,6 +1,7 @@
 ﻿
 using Classwork.DAL;
 using Classwork.ViewModel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -31,6 +32,27 @@ namespace Classwork.Controllers
             };
             return View(model);
         }
+        //public IActionResult SetSession()
+        //{
+        //    HttpContext.Session.SetString("p512", "Ali ,Medine,Ricat");
+        //    return Content("Elave edildi");
+        //}
+        //public IActionResult GetSession()
+        //{
+
+        //    return Content(HttpContext.Session.GetString("p512"));
+        //}
+        //public IActionResult CookieSet()
+        //{
+        //    Response.Cookies.Append("p512", "Aygun,Aylin,Leyla");
+        //    return Content("Elave olundu");
+        //}
+        //public IActionResult CookieGet()
+        //{
+           
+        //    return Content(Request.Cookies["p512"]);
+        //}
+
 
     }
 }

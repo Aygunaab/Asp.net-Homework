@@ -105,124 +105,142 @@ $(document).ready(function () {
     .html('<i class="fas fa-long-arrow-alt-right fa-2x"></i>');
   $(".owl-prev")
     .children()
-    .html('<i class="fas fa-long-arrow-alt-left fa-2x"></i>');
+        .html('<i class="fas fa-long-arrow-alt-left fa-2x"></i>');
+
+    $(document).on("keyup", "#search-input", function () {
+        let searchstring = $(this).val();
+        $.ajax({
+            type: "GET",
+            url: "/flower/search?searchstring=" + searchstring ,
+            success: function (response) {
+                $("#search-result li:not(:first-child)").remove();
+                $("#search-result").append(response)
+                //for (var flower of response) {
+                //    /* $("#search-result").append(`<li> ${flower.name} </li>`)*/
+                   
+                //}
+            }
+
+        })
+    })
+    
 });
 
 
 
-let addToCart = document.querySelectorAll(".addToCart");
-let flowerList = document.querySelector('#flower-list');
-let deleteFlower = document.querySelector(".fa-times");
+//let addToCart = document.querySelectorAll(".addToCart");
+//let flowerList = document.querySelector('#flower-list');
+//let deleteFlower = document.querySelector(".fa-times");
 
 
 
 
-if (!localStorage.getItem("basket")) {
-  localStorage.setItem("basket", JSON.stringify([]));
-}
+//if (!localStorage.getItem("basket")) {
+//  localStorage.setItem("basket", JSON.stringify([]));
+//}
 
-addToCart.forEach((addBtn) => {
-  addBtn.addEventListener("click", function (e) {
-    if (!localStorage.getItem("basket")) {
-      localStorage.setItem("basket", JSON.stringify([]));
-    }
+//addToCart.forEach((addBtn) => {
+//  addBtn.addEventListener("click", function (e) {
+//    if (!localStorage.getItem("basket")) {
+//      localStorage.setItem("basket", JSON.stringify([]));
+//    }
 
-    let basket = JSON.parse(localStorage.getItem("basket"));
+//    let basket = JSON.parse(localStorage.getItem("basket"));
 
-    let price = this.nextElementSibling.children[0].innerText;
-    let flower = this.parentElement.previousElementSibling.innerText;
-    let image =
-      this.parentElement.parentElement.previousElementSibling.children[0].src;
-    let id = this.getAttribute("data-id");
+//    let price = this.nextElementSibling.children[0].innerText;
+//    let flower = this.parentElement.previousElementSibling.innerText;
+//    let image =
+//      this.parentElement.parentElement.previousElementSibling.children[0].src;
+//    let id = this.getAttribute("data-id");
 
-    let existProduct = basket.find((p) => p.id == id);
+//    let existProduct = basket.find((p) => p.id == id);
 
-    if (!existProduct) {
-      let product = {
-        id,
-        price,
-        flower,
-        image,
-        count: 1,
-      };
-      basket.push(product);
-    } else {
-      existProduct.count++;
-    }
+//    if (!existProduct) {
+//      let product = {
+//        id,
+//        price,
+//        flower,
+//        image,
+//        count: 1,
+//      };
+//      basket.push(product);
+//    } else {
+//      existProduct.count++;
+//    }
 
-    localStorage.setItem("basket", JSON.stringify(basket));
-    Refresh();
-  });
-});
+//    localStorage.setItem("basket", JSON.stringify(basket));
+//    Refresh();
+//  });
+//});
 
-function productCount(basket) {
-  let countElement = document.querySelector(".countProduct");
-  let count = 0;
+//function productCount(basket) {
+//  let countElement = document.querySelector(".countProduct");
+//  let count = 0;
 
-  basket?.forEach((p) => {
-    count += p.count;
-  });
-  countElement.innerText = count;
-}
+//  basket?.forEach((p) => {
+//    count += p.count;
+//  });
+//  countElement.innerText = count;
+//}
 
-function totalPrice(basket) {
-  let priceElement = document.querySelector(".totalPrice");
-  let ElementPrices = document.querySelector(".totalPriceList");
-  let total = basket?.reduce((total, p) => {
-    return (total += p.price * p.count);
-  }, 0);
-  priceElement.innerText = total ?? 0;
-  ElementPrices.innerText = total ?? 0;
-}
-
-
-
-Refresh();
+//function totalPrice(basket) {
+//  let priceElement = document.querySelector(".totalPrice");
+//  let ElementPrices = document.querySelector(".totalPriceList");
+//  let total = basket?.reduce((total, p) => {
+//    return (total += p.price * p.count);
+//  }, 0);
+//  priceElement.innerText = total ?? 0;
+//  ElementPrices.innerText = total ?? 0;
+//}
 
 
-function deleteItemFromLocalStorage(id) {
-  let basket = JSON.parse(localStorage.getItem("basket"));
-  let newBasket = basket.filter((p) => p.id != id);
-  localStorage.setItem("basket", JSON.stringify(newBasket));
-  Refresh();
-}
+
+//Refresh();
 
 
-function addItemToBasketList(basket) {
-  let basketArray = basket?.map((p) => {
-    return `<div class="flower-item">
-    <div class="itemImg">
-      <img src="${p.image}" />
-    </div>
-    <div class="flower-body">
-      <div class="flower-title">
-        <p class="">${p.flower}</p>
-      </div>
-      <div class="flower-text">
-        <span class="count">${p.count}</span>
-        x
-        <span class="price">${p.price}</span>
-      </div>
-    </div>
-    <i class="fas fa-times" onclick="deleteItemFromLocalStorage(${p.id})"></i>
-  </div>`
-  });
+//function deleteItemFromLocalStorage(id) {
+//  let basket = JSON.parse(localStorage.getItem("basket"));
+//  let newBasket = basket.filter((p) => p.id != id);
+//  localStorage.setItem("basket", JSON.stringify(newBasket));
+//  Refresh();
+//}
 
 
-  if(basketArray && basketArray?.length > 0){
-    flowerList.innerHTML = basketArray.join("");
-  }
-  else{
-    flowerList.innerHTML = '<div class="text-center">No products in the cart.</div>';
-  }
-}
+//function addItemToBasketList(basket) {
+//  let basketArray = basket?.map((p) => {
+//    return `<div class="flower-item">
+//    <div class="itemImg">
+//      <img src="${p.image}" />
+//    </div>
+//    <div class="flower-body">
+//      <div class="flower-title">
+//        <p class="">${p.flower}</p>
+//      </div>
+//      <div class="flower-text">
+//        <span class="count">${p.count}</span>
+//        x
+//        <span class="price">${p.price}</span>
+//      </div>
+//    </div>
+//    <i class="fas fa-times" onclick="deleteItemFromLocalStorage(${p.id})"></i>
+//  </div>`
+//  });
 
-function Refresh() {
-  let basket = JSON.parse(localStorage.getItem("basket"));
-  addItemToBasketList(basket);
-  productCount(basket);
-  totalPrice(basket);
-}
+
+//  if(basketArray && basketArray?.length > 0){
+//    flowerList.innerHTML = basketArray.join("");
+//  }
+//  else{
+//    flowerList.innerHTML = '<div class="text-center">No products in the cart.</div>';
+//  }
+//}
+
+//function Refresh() {
+//  let basket = JSON.parse(localStorage.getItem("basket"));
+//  addItemToBasketList(basket);
+//  productCount(basket);
+//  totalPrice(basket);
+//}
 
 
 window.addEventListener('scroll', function(){

@@ -30,6 +30,15 @@ namespace Classwork.Controllers
             ViewBag.Related = await _context.Flowers.Where(f => f.FlowerCategories.FirstOrDefault(fc => fc.CategoryId == categoryId).CategoryId == categoryId && f.Id != flower.Id).Include(f => f.FlowerImages).Include(f => f.FlowerCategories).ThenInclude(fc => fc.Category).ToListAsync();
             return View(flower);
         }
+        public async Task<IActionResult>Search(string searchstring)
+        {
+            if (string.IsNullOrWhiteSpace(searchstring))
+            {
+                return PartialView("_SearchPartialView", new List<Flower>());
+            }
+            var flower = await _context.Flowers.Where(f => f.Name.ToUpper().Contains(searchstring.ToUpper())).ToListAsync();
+            return PartialView("_SearchPartialView",flower);
+        }
 
        
     }
