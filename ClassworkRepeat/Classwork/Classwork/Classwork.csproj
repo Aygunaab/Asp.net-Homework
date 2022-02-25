@@ -22,4 +22,53 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\admin\css\maps\style.css.map" />
+    <None Include="wwwroot\assets\admin\fonts\.DS_Store" />
+    <None Include="wwwroot\assets\admin\fonts\Roboto\.DS_Store" />
+    <None Include="wwwroot\assets\admin\fonts\Roboto\Roboto-Black.woff2" />
+    <None Include="wwwroot\assets\admin\fonts\Roboto\Roboto-Bold.woff2" />
+    <None Include="wwwroot\assets\admin\fonts\Roboto\Roboto-Light.woff2" />
+    <None Include="wwwroot\assets\admin\fonts\Roboto\Roboto-Medium.woff2" />
+    <None Include="wwwroot\assets\admin\fonts\Roboto\Roboto-Regular.woff2" />
+    <None Include="wwwroot\assets\admin\images\.DS_Store" />
+    <None Include="wwwroot\assets\admin\images\auth\.DS_Store" />
+    <None Include="wwwroot\assets\admin\images\faces\.DS_Store" />
+    <None Include="wwwroot\assets\admin\images\logo-mini.svg" />
+    <None Include="wwwroot\assets\admin\images\logo.svg" />
+    <None Include="wwwroot\assets\admin\js\.DS_Store" />
+    <None Include="wwwroot\assets\admin\js\chart.js" />
+    <None Include="wwwroot\assets\admin\js\Chart.min.js" />
+    <None Include="wwwroot\assets\admin\js\dashboard.js" />
+    <None Include="wwwroot\assets\admin\js\data-table.js" />
+    <None Include="wwwroot\assets\admin\js\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\assets\admin\js\documentation.js" />
+    <None Include="wwwroot\assets\admin\js\file-upload.js" />
+    <None Include="wwwroot\assets\admin\js\hoverable-collapse.js" />
+    <None Include="wwwroot\assets\admin\js\jquery.cookie.js" />
+    <None Include="wwwroot\assets\admin\js\jquery.dataTables.js" />
+    <None Include="wwwroot\assets\admin\js\off-canvas.js" />
+    <None Include="wwwroot\assets\admin\js\tabs.js" />
+    <None Include="wwwroot\assets\admin\js\template.js" />
+    <None Include="wwwroot\assets\admin\pages\.DS_Store" />
+    <None Include="wwwroot\assets\admin\pages\charts\.DS_Store" />
+    <None Include="wwwroot\assets\admin\pages\forms\.DS_Store" />
+    <None Include="wwwroot\assets\admin\pages\icons\.DS_Store" />
+    <None Include="wwwroot\assets\admin\pages\samples\.DS_Store" />
+    <None Include="wwwroot\assets\admin\pages\tables\.DS_Store" />
+    <None Include="wwwroot\assets\admin\pages\ui-features\.DS_Store" />
+    <None Include="wwwroot\assets\admin\vendors\.DS_Store" />
+    <None Include="wwwroot\assets\admin\vendors\base\bootstrap.min.js.map" />
+    <None Include="wwwroot\assets\admin\vendors\base\vendor.bundle.base.js" />
+    <None Include="wwwroot\assets\admin\vendors\chart.js\Chart.min.js" />
+    <None Include="wwwroot\assets\admin\vendors\datatables.net-bs4\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\assets\admin\vendors\datatables.net\jquery.dataTables.js" />
+    <None Include="wwwroot\assets\admin\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <None Include="wwwroot\assets\admin\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+  </ItemGroup>
+
 </Project>

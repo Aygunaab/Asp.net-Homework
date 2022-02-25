@@ -9,9 +9,10 @@ namespace Classwork.Models
     public class Category
     {
         public int Id { get; set; }
-        [Required]
+        [Required (ErrorMessage = "Bos qoyma")]
         [StringLength(maximumLength: 20)]
         public string Name { get; set; }
+        public string Desc { get; set; }
         public List<FlowerCategory> FlowerCategories { get; set; }
     }
 }

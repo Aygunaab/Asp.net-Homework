@@ -151,3 +151,11 @@ C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\ne
 C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Nav\Default.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchPartialView.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Detail.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\ClassworkRepeat\Classwork\Classwork\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_ValidationPartial.cshtml.g.cs
