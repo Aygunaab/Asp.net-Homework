@@ -28,7 +28,7 @@ namespace Classwork.Controllers
                 Sliders = await _context.Sliders.OrderBy(s => s.Order).ToListAsync(),
                 Experts = await _context.Experts.Include(e => e.Position).Take(4).ToListAsync(),
                 Categories = await _context.Categories.OrderByDescending(c => c.Id).Take(6).ToListAsync(),
-               
+              
             };
             return View(model);
         }

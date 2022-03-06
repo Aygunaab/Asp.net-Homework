@@ -1,0 +1,50 @@
+﻿
+@model Layout
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+<div class="nav">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-10 col-md-10 p-0 col-lg-5 logo">
+                <img src="~/images/@Model.Logo" alt="" />
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-12 footer-mark">
+                <div class="row">
+                    <div class="col-lg-4 col-12 d-flex justify-content-end socialNet">
+                        <a style="color: #afafaf" class="mx-1" href="@Model.InstagramUrl">INSTAGRAM</a>
+                        <a style="color: #afafaf" class="mx-1" href="@Model.FacebookUrl">FACEBOOK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+@section Scripts{
+    <partial name="_ValidationPartial" />
+}

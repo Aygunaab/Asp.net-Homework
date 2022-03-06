@@ -202,7 +202,33 @@
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="Index">List</a></li>
-                                <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="Create" >New</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="Create">New</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/assets/admin/#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title"> Sliders</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic1">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="slider" asp-action="index">List</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="slider" asp-action="create">New</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/assets/admin/#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title"> Layouts</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic2">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="layout" asp-action="Index">List</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="layout" asp-action="Create">New</a></li>
                             </ul>
                         </div>
                     </li>

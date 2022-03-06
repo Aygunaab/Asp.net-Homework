@@ -12,6 +12,7 @@ namespace Classwork.ViewModel
         public List<Expert> Experts { get; set; }
         public List<Category> Categories { get; set; }
         public List<Flower> Flowers { get; set; }
+        public List<Layout> Layouts { get; set; }
 
     }
 }

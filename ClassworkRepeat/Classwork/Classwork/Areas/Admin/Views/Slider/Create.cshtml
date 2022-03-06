@@ -1,0 +1,54 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create New Slider</h4>
+                        <p class="card-description">
+                            Basic form layout
+                        </p>
+                        <form class="forms-sample" method="post" asp-controller="slider" asp-action="create" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Title</label>
+                                <input asp-for="Title" class="form-control" id="exampleInputUsername1" placeholder="Title">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Description</label>
+                                <input asp-for="Desc" class="form-control" id="exampleInputUsername1" placeholder="Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Image</label>
+                                <input  accept="image/*" asp-for="ImageFile" class="form-control" id="exampleInputUsername1" placeholder="Image">
+                                <span asp-validation-for="ImageFile" class="text-danger"></span>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">SignaturImage</label>
+                                <input  accept="image/*" asp-for="SignatureImageFile" class="form-control" id="exampleInputUsername1" placeholder="SignaturImage">
+                                <span asp-validation-for="SignatureImage" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Order</label>
+                                <input asp-for="Order" class="form-control" id="exampleInputUsername1" placeholder="Order">
+                                <span asp-validation-for="Order" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button class="btn btn-light">Cancel</button>
+                            <span asp-validation-for="Desc" class="text-danger"></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationPartial" />
+}

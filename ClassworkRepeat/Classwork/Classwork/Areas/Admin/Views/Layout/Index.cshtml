@@ -1,5 +1,7 @@
 ﻿
-@model List<Category>
+
+
+@model List<Layout>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +15,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Category List</h4>
-                       
+
                         <div class="table-responsive pt-3">
                             <table class="table table-bordered">
                                 <thead>
@@ -22,10 +24,13 @@
                                             Id
                                         </th>
                                         <th>
-                                            Name
+                                            Logo
                                         </th>
                                         <th>
-                                           Actions
+                                            Instagram
+                                        </th>
+                                        <th>
+                                            Facebook
                                         </th>
 
 
@@ -39,11 +44,17 @@
                                             @item.Id
                                         </td>
                                         <td>
-                                            @item.Name
+                                            <img src="~/images/@item.Logo" style="width:200px ;height:50px ;border-radius:inherit"alt="" />
                                         </td>
                                         <td>
-                                            <a class="btn btn-primary" asp-controller="category" asp-action="detail"asp-route-id="@item.Id" >Detail</a> <a class="btn btn-secondary" asp-controller="Category" asp-action="update" asp-route-id="@item.Id">Update</a>
-                                            <a class="btn btn-danger" asp-controller="category" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+                                            @item.InstagramUrl
+                                        </td>
+                                        <td>
+                                            @item.FacebookUrl
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" asp-controller="layout" asp-action="detail" asp-route-id="@item.Id">Detail</a> <a class="btn btn-secondary" asp-controller="layout" asp-action="update" asp-route-id="@item.Id">Update</a>
+                                            <a class="btn btn-danger" asp-controller="layout" asp-action="delete" asp-route-id="@item.Id">Delete</a>
                                         </td>
 
                                     </tr>
@@ -58,4 +69,5 @@
         </div>
     </div>
 </div>
+
 
