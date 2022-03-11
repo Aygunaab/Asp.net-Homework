@@ -18,6 +18,7 @@ namespace Classwork.Utils
             fileStream.Close();
             return FileName;
         }
+       
         public static void Delete(string fullPath)
         {
             if (File.Exists(fullPath))
@@ -25,5 +26,6 @@ namespace Classwork.Utils
                 File.Delete(fullPath);
             }
         }
+       
     }
 }

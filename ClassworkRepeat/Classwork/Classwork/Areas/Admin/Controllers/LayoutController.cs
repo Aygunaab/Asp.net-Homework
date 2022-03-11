@@ -83,20 +83,30 @@ namespace Classwork.Areas.Admin.Controllers
 
             return View(layout);
         }
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Update(int Id, Layout layout)
-        //{
-        //    Layout DbLayout = await _context.Layouts.FindAsync(Id);
-        //    if (layout == null) return NotFound();
-        //    if (Id != layout.Id) return BadRequest();
-        //    if (!ModelState.IsValid) return View();
-        //    DbLayout.Logo = layout.Logo;
-        //    DbLayout.InstagramUrl = layout.InstagramUrl;
-        //    DbLayout.FacebookUrl = layout.FacebookUrl;
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int Id, Layout layout)
+        {
+            var dblayout = await _context.Layouts.FindAsync(Id);
+            if (layout == null) return NotFound();
+            if (Id != layout.Id) return BadRequest();
+            if (!ModelState.IsValid) return View();
+        
+            var FullPath = FileConstants.ImagePath;
+            var LogoName = Guid.NewGuid() + layout.LogoFile.FileName;
+
+
+            FileStream fileStream = new FileStream(FullPath, FileMode.Append);
+            await layout.LogoFile.CopyToAsync(fileStream);
+            fileStream.Close();
+            dblayout.LogoFile = layout.LogoFile;
+            dblayout.InstagramUrl = layout.InstagramUrl;
+            dblayout.FacebookUrl = layout.FacebookUrl;
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         public async Task<IActionResult> Delete(int id)
         {
             var layout = await _context.Layouts.FindAsync(id);

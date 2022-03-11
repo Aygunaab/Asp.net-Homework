@@ -2,6 +2,7 @@
 using Classwork.DAL;
 using Classwork.Models;
 using Classwork.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 namespace Classwork.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = RoleConstants.Admin)]
     public class SliderController : Controller
     {
         private readonly AppDbContext _context;

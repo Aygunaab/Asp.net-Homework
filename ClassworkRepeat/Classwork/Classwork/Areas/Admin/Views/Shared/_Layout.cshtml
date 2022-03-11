@@ -233,6 +233,20 @@
                         </div>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/assets/admin/#ui-basic5" aria-expanded="false" aria-controls="ui-basic5">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title"> Users</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic5">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="user" asp-action="Index">List</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="~/assets/admin/pages/forms/basic_elements.html">
                             <i class="mdi mdi-view-headline menu-icon"></i>
                             <span class="menu-title">Form elements</span>

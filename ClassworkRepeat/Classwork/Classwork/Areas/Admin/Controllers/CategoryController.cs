@@ -1,5 +1,7 @@
-﻿using Classwork.DAL;
+﻿using Classwork.Constants;
+using Classwork.DAL;
 using Classwork.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 namespace Classwork.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = RoleConstants.Admin)]
     public class CategoryController : Controller
     {
         

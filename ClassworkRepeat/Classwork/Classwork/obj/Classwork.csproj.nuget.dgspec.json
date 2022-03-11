@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\OneDrive\\Desktop\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Desktop\\Asp.net-Homework\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\OneDrive\\Desktop\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Desktop\\Asp.net-Homework\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Desktop\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Desktop\\Asp.net-Homework\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj",
         "projectName": "Classwork",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\Asp.net-Homework\\ClassworkRepeat\\Classwork\\Classwork\\Classwork.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\ClassworkRepeat\\Classwork\\Classwork\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\Asp.net-Homework\\ClassworkRepeat\\Classwork\\Classwork\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.22, )"
@@ -57,6 +65,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

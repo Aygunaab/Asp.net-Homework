@@ -1,8 +1,12 @@
 using Classwork.Constants;
 using Classwork.DAL;
+using Classwork.Models;
+using Classwork.Services;
+using Classwork.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,7 +38,18 @@ namespace Classwork
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             
             });
-            services.AddControllersWithViews();
+
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 5;
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = true;
+
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddScoped<IMailService, MailService>();
+            services.AddControllersWithViews();  
 
             services.AddDbContext<AppDbContext>(option => {
                 option.UseSqlServer(Configuration.GetConnectionString("Default"));
@@ -63,6 +78,7 @@ namespace Classwork
             app.UseSession();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
